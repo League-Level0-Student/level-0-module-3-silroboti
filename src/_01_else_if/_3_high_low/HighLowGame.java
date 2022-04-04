@@ -3,12 +3,25 @@ package _01_else_if._3_high_low;
 
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 public class HighLowGame {
 
 	public static void main(String[] args) {
 		// 3. Change this line to give you a random number between 1 - 100. 
-		int random = new Random().nextInt(5);
-		
+		int random = new Random().nextInt(100-1+1);
+//JOptionPane.showMessageDialog(null, random);
+		for(int i = 0; i < 10; i++) {
+		String userInput = JOptionPane.showInputDialog("What is your number");
+		int userInputInt = Integer.parseInt(userInput);
+		if (userInputInt == random) {
+			JOptionPane.showMessageDialog(null, "Win!");
+			System.exit(0);
+		}else if (userInputInt > random) {
+			JOptionPane.showMessageDialog(null, "Your guess is too high");
+		}else if (userInputInt < random){
+			JOptionPane.showMessageDialog(null, "Your guess is too low");
+		}
 		// 2. Print out the random variable above
 		
 		// 11. Repeat steps 1 to 10 ten times
@@ -26,6 +39,7 @@ public class HighLowGame {
 				// 10. Tell them it's too low
 
 		// 13. Tell them they lose
+		}
 		
 	}
 
